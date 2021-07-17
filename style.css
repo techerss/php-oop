@@ -1,0 +1,22 @@
+form{
+	
+	width: 400px;
+	
+}
+
+body{
+	background: red;
+}
+.mark{
+	widows: 600px;
+	background-color: red;
+}
+.markdiv{
+	width: 400px;
+	background: red;
+}
+
+/*input{
+	width: 200px;
+	border-radius: 50px;
+}*/
