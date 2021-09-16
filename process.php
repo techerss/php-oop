@@ -3,12 +3,12 @@
 require_once('function.php');
 
 if (isset($_POST['back'])) {
-	header("location: my.php?");	
+	header("location: index.php?");	
 	
 }
 if (isset($_POST['bills'])) {
 	$in = 4;
-	header("location: my.php?dash=".$in);	
+	header("location: index.php?dash=".$in);	
 	
 }
 if (isset($_POST['submit'])) {
@@ -16,11 +16,11 @@ if (isset($_POST['submit'])) {
 
 	if($input == ""){
 		$error = "All fields required line 9";
-		header("location: my.php?error=".$error);
+		header("location: index.php?error=".$error);
 
 	}else{
 
-		header("location: my.php?output=".$input);	
+		header("location: index.php?output=".$input);	
 	}
 	
 }
@@ -29,11 +29,11 @@ if (isset($_POST['dash'])) {
      
 	if($input == " "){
 		$error = "All fields required line 24";
-		header("location: my.php?error=".$error);
+		header("location: index.php?error=".$error);
 
 	}else{
 
-		header("location: my.php?dash=".$input);	
+		header("location: index.php?dash=".$input);	
 	}
 	
 }
@@ -49,7 +49,7 @@ if (isset($_POST['reg'])) {
 
 	if ($name == '' || $password == '' || $pin == '' || $accountnum == '') {
 		$error = "All fields required line 31";
-		header("location: my.php?errorreg=".$error);
+		header("location: index.php?errorreg=".$error);
 	}else{
 		$name = mysql_prep($connect, $name);
 		$newpass = password_encrypt($password);
@@ -60,11 +60,11 @@ if (isset($_POST['reg'])) {
 		$result = mysqli_query($connect, $sql);
 		if ($result) {
 		 	$success = "registration succesfull";
-			header("location: my.php?success=".$success);
+			header("location: index.php?success=".$success);
 
 		}else{
 			$error = "error resgistering";
-			header("location: my.php?error=".$error);
+			header("location: index.php?error=".$error);
 		} 
 
 	}
@@ -76,7 +76,7 @@ if (isset($_POST['log'])) {
 
 	if ($name == '' || $password == ''){
 		$error = "All fields required";
-		header("location: my.php?error=".$error);
+		header("location: index.php?error=".$error);
 	}else{
 
 		$new_pass = password_encrypt($password);
@@ -99,14 +99,14 @@ if (isset($_POST['log'])) {
 
 				}else{
 					$failed = "name or password is inccorect";
-					header('location: my.php?error='.$failed);
+					header('location: index.php?error='.$failed);
 				}
 				$success = 'session started';
-				header('location: my.php?session='.$success);
+				header('location: index.php?session='.$success);
 			}
 		}else{
 				$notfound = "name not found";
-				header('location: my.php?error='.$notfound);
+				header('location: index.php?error='.$notfound);
 		}
 	
 	}
@@ -123,7 +123,7 @@ if (isset($_POST['dep'])) {
 
 	if ($accnum == '' || $amount == '' || $pin == '') {
 		$error = "All fields required";
-		header("location: my.php?dep=".$error);
+		header("location: index.php?dep=".$error);
 	}else{
 		$accnum = mysql_prep($connect, $accnum);
 		$amount = mysql_prep($connect, $amount);
@@ -147,7 +147,7 @@ if (isset($_POST['trans'])) {
 
 	if ($accnum == '' ||$desaccnum == '' || $amount == '' || $pin == '') {
 		$error = "All fields required";
-		header("location: my.php?trans=".$error);
+		header("location: index.php?trans=".$error);
 	}else{
 		$accnum = mysql_prep($connect, $accnum);
 		$desaccnum = mysql_prep($connect, $desaccnum);
@@ -171,7 +171,7 @@ if (isset($_POST['with'])) {
 
 	if ($accnum == ''|| $amount == '' || $pin == '') {
 		$error = "All fields required";
-		header("location: my.php?with=".$error);
+		header("location: index.php?with=".$error);
 	}else{
 		$accnum = mysql_prep($connect, $accnum);
 		$amount = mysql_prep($connect, $amount);
@@ -192,7 +192,7 @@ if (isset($_POST['bill'])) {
 
 	if ($accnum == ''|| $amount == '' || $pin == '') {
 		$error = "All fields required";
-		header("location: my.php?with=".$error);
+		header("location: index.php?with=".$error);
 	}else{
 		$accnum = mysql_prep($connect, $accnum);
 		$amount = mysql_prep($connect, $amount);
@@ -212,7 +212,7 @@ if (isset($_POST['nepa'])) {
 
 	if ($accnum == ''|| $amount == '' || $pin == '') {
 		$error = "All fields required";
-		header("location: my.php?nepa=".$error);
+		header("location: index.php?nepa=".$error);
 	}else{
 		$accnum = mysql_prep($connect, $accnum);
 		$amount = mysql_prep($connect, $amount);
@@ -234,7 +234,7 @@ if (isset($_POST['gotv'])) {
 
 	if ($accnum == ''|| $amount == '' || $pin == '') {
 		$error = "All fields required";
-		header("location: my.php?nepa=".$error);
+		header("location: index.php?nepa=".$error);
 	}else{
 		$accnum = mysql_prep($connect, $accnum);
 		$amount = mysql_prep($connect, $amount);
@@ -255,7 +255,7 @@ if (isset($_POST['phone'])) {
 
 	if ($accnum == ''|| $amount == '' || $pin == '') {
 		$error = "All fields required";
-		header("location: my.php?nepa=".$error);
+		header("location: index.php?nepa=".$error);
 	}else{
 		$accnum = mysql_prep($connect, $accnum);
 		$amount = mysql_prep($connect, $amount);
@@ -273,9 +273,9 @@ if (isset($_POST['getbill'])) {
      
 	if($input == " "){
 		$error = "All fields required line 24";
-		header("location: my.php?billin=".$error);
+		header("location: index.php?billin=".$error);
 	}else{
-		header("location: my.php?billin=".$input);	
+		header("location: index.php?billin=".$input);	
 	}
 	
 }
